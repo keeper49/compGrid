@@ -1,10 +1,11 @@
 #include "stdio.h"
 #define CUDA_ERR_CHECK(x) \
-	do{ cudaError_t err = x; \
+	do{ 	cudaError_t err = x; \
 		if (err != cudaSuccess) { \
 			fprintf(stderr, "Error \"%s\" at %s:%d \n", \
 				cudaGetErrorString(err), __FILE__, __LINE__);\
-		exit(0);} \
+			exit(0);\
+		} \
 	} while(0)
 
 #define DGX 3
