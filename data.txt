@@ -1,0 +1,42 @@
+name			GeForce GTX 550 Ti
+totalGlobalMem		1010630656	объём глобальной памяти в байтах (~963 Gb)
+sharedMemPerBlock	49152		макс. объём разделяемой памяти между нитями
+regsPerBlock		32768		(?) макс. количество 32-битных регистров блока
+warpSize		32		объём варпа в нитях
+memPitch		2147483647	(?) макс. шаг в байтах для копирования памяти, выделенной cudaMallocPitch()
+
+maxThreadsPerBlock	1024		макс. колич нитей в блоке
+maxThreadsDim.x		1024
+maxThreadsDim.y		1024
+maxThreadsDim.z		64
+maxGridSize.x		65535
+maxGridSize.y		65535
+maxGridSize.z		65535
+totalConstMem		65536		объём константной памяти
+
+major			2		(?) основеной номер, определяющий вычислительную способность устройства
+minor			1		(?) второстепенный номер, определяющий вычислительную способность устройства
+
+clockRate		1800000		тактовая частота (? видеокарты) в КГц
+
+textureAlignment	512		(?) текстурные базовые адреса, которые выровнены с байтами textureAlignment, не нуждаются в смещении, применяемом к выборкам текстур
+
+deviceOverlap		1		поддержка ассинхронного копирования (1 - да; 0 - нет)
+multiProcessorCount	4		количество мультипроцессоров на видеокарте	
+
+kernelExecTimeoutEnabled 1		ограничение на время выполнения функций на видеокарте (1 - есть ограничение, 0 - нет)
+
+integrated		0		(?) 1 - интегрированный GPU, 0 - дискретный компонент
+canMapHostMemory	1		(?) видеокарта может отображать память хоста на видеопамять с использованием cudaHostAlloc()/cudaHostGetDevicePointer()
+computeMode		0		(?) режим вычисления (см. ниже)
+concurrentKernels	1		(?) поддержка нескольких ядер на одном контексте (не гарантируется, что несколько ядер будут постоянно находиться на устройстве, поэтому на эту функцию не следует полагаться на правильность)
+ECCEnabled		0		(?) 1 - есть поддержка ECC
+pciBusID		1		ID шины PCI
+pciDeviceID		0		ID слота PCI
+tccDriver		0		(?) 1 -используется драйвер TCC 
+
+computeMode:
+	cudaComputeModeDefault: 0	несколько нитей могут использовать cudaSetDevice()
+	cudaComputeModeExclusive: 1	только одна нить может использовать cudaSetDevice()
+	cudaComputeModeProhibited: 2	ни одна нить не может использовать cudaSetDevice()
+
